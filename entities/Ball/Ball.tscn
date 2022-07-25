@@ -1,0 +1,29 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://entities/Ball/Ball.gd" type="Script" id=1]
+[ext_resource path="res://entities/Ball/pngwing.com.png" type="Texture" id=2]
+[ext_resource path="res://entities/Ball/PongRacket.wav" type="AudioStream" id=3]
+[ext_resource path="res://entities/Ball/PongWall.wav" type="AudioStream" id=4]
+
+[sub_resource type="CircleShape2D" id=1]
+radius = 10.0499
+
+[node name="Ball" type="KinematicBody2D"]
+collision_layer = 3
+script = ExtResource( 1 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+scale = Vector2( 2, 2 )
+shape = SubResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 4.17233e-07, 0.5 )
+scale = Vector2( 0.0381125, 0.0374771 )
+z_index = 1
+texture = ExtResource( 2 )
+
+[node name="RacketSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 3 )
+
+[node name="WallSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 4 )

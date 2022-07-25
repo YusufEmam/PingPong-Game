@@ -1,0 +1,13 @@
+[gd_scene format=2]
+
+[node name="ScreenShake" type="Node"]
+
+[node name="ShakeTween" type="Tween" parent="."]
+
+[node name="Frequency" type="Timer" parent="."]
+
+[node name="Duration" type="Timer" parent="."]
+one_shot = true
+
+[connection signal="timeout" from="Frequency" to="." method="_on_Frequency_timeout"]
+[connection signal="timeout" from="Duration" to="." method="_on_Duration_timeout"]
